@@ -188,3 +188,22 @@ with DAG(
 ```
 </details>
 
+## DAGs
+Uma **DAG (Directed Acyclic Graph)** é a estrutura central no Apache Airflow. Ela representa um workflow, definindo a ordem e as dependências entre as tarefas. Cada DAG é escrito em Python e descreve como as tarefas devem ser executadas, incluindo agendamento, dependências e configurações específicas.
+
+![Representação de uma dag no Airflow](imgs/dag_ex.png "DAG")
+
+Neste exemplo a dag consistem em uma tareefa de mostrar no terminal a data agendada da tarefa e o dia que a tarefa foi realmente executada. 
+
+![Resultado do bash para data agendada](imgs/data_agendada.png "Bash")
+![Resultado do bash para data de execução](imgs/data_da_execucao.png "Bash")
+
+## Um exemplo com Hooks
+Este exemplo usa de Hooks do MySQL e do Mongo para ler de uma db e transformar os dados para um formato aceito pelo mongo e carrega-los neste. 
+
+![Diagrama](imgs/etl.png "Diagrama")
+
+[link da dag](https://github.com/diskrat/dags_airflow/blob/main/basic_etl_dag/basic_etl_dag.py)
+
+Resultando em:
+![Grafico no mongo](imgs/Resultado_processamento.png "Grafico")
